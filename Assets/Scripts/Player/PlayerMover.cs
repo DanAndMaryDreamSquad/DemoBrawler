@@ -9,12 +9,10 @@ public class PlayerMover : MonoBehaviour {
     public float runAngle;
 	public GameObject camera;
 	public GameObject lastCameraTransform;
-	public AudioSource footstepAudio;
+	public Animator animator;
 	private float animationSpeed = 1.0f;
-	private float lastFootstep = 0f;
     private Vector3 desiredDirection = Vector3.zero;
     private CharacterController controller;
-    private Animator animator;
 	private AudioSource jumpAudio;
     private bool isMoving = false;
     private bool fullStop = true;
@@ -24,7 +22,7 @@ public class PlayerMover : MonoBehaviour {
 	private float yMovement = 0;
 
     void Start () {
-        animator = GetComponent<Animator> ();
+        //animator = GetComponent<Animator> ();
         controller = GetComponent<CharacterController> ();
 		lastDesiredFacingRotation = Quaternion.Euler (0, 45, 0);
     }
@@ -84,12 +82,4 @@ public class PlayerMover : MonoBehaviour {
 			animator.speed = 1.0f;
 		}
     }
-
-	public void PlayFootstep() {
-		if (controller.isGrounded && lastFootstep + 0.12f < Time.time) {
-			footstepAudio.volume = Mathf.Min(1, animator.speed / 4);
-			footstepAudio.Play();
-			lastFootstep = Time.time;
-		}
-	}
 }
