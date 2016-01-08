@@ -21,8 +21,8 @@ public class EnemyMover : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update() {
-		Debug.Log("Aggro: " + isAggroed);
-		Debug.Log("Nav enabled: " + nav.enabled);
+		//Debug.Log("Aggro: " + isAggroed);
+		//Debug.Log("Nav enabled: " + nav.enabled);
 		CheckAggro();
 		if (isAggroed) {
 			nav.SetDestination(player.position);
