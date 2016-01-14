@@ -14,8 +14,7 @@ public class PlayerFighting : MonoBehaviour {
 	void Update () {
 		if (Input.GetButton("Fire1")) {
 			Debug.Log("punching");
-			animator.SetTrigger("Punch");
-		}
-	
+			animator.SetTrigger("Punch1");
+		}	
 	}
 }
