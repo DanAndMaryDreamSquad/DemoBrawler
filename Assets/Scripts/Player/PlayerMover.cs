@@ -20,17 +20,21 @@ public class PlayerMover : MonoBehaviour {
     private Quaternion defaultLeanRotation = Quaternion.Euler (new Vector3 (0, 0, 0));
 	private Vector3 preJumpDesiredDirection = Vector3.zero;
 	private float yMovement = 0;
+	private PlayerFighting playerFighting;
 
     void Start () {
         //animator = GetComponent<Animator> ();
         controller = GetComponent<CharacterController> ();
 		lastDesiredFacingRotation = Quaternion.Euler (0, 45, 0);
+		playerFighting = GetComponent<PlayerFighting>();
     }
 
 	void Update () {
-        FindDirection ();
-		Falling ();
-        Move ();
+		if (!playerFighting.IsComboing) {
+            FindDirection ();
+		    Falling ();
+            Move ();
+	    }
     }
 
     void FindDirection () {
