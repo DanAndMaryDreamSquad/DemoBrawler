@@ -24,4 +24,16 @@ public class BloxAnimations : MonoBehaviour {
 		Debug.Log("done punching");
 		playerFighting.DonePunching();
 	}
+
+	void StartCombo() {
+		Debug.Log("starting combo");
+		playerFighting.StartCombo();
+	}
+
+	void AcceptingComboInput() {
+		Debug.Log("accepting input");
+		playerFighting.AcceptingComboInput();
+	}
+
+
 }
