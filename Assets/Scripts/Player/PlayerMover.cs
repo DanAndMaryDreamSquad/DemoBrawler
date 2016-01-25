@@ -8,9 +8,9 @@ public class PlayerMover : MonoBehaviour {
     public float jumpSpeed = 8.0F;
     public float gravity = 20.0F;
     public float runAngle;
-	public GameObject camera;
-	public GameObject lastCameraTransform;
-	public Animator animator;
+	public Animator animator;	
+	private GameObject camera;
+	private GameObject lastCameraTransform;
 	private float animationSpeed = 1.0f;
 	private Vector3 desiredDirection = Vector3.zero;
     private Vector3 desiredDirectionWithSpeed = Vector3.zero;
@@ -25,6 +25,8 @@ public class PlayerMover : MonoBehaviour {
 	private PlayerFighting playerFighting;
 
     void Start () {
+		camera = GameObject.FindGameObjectWithTag("CameraObject");
+		lastCameraTransform = camera;
         //animator = GetComponent<Animator> ();
         controller = GetComponent<CharacterController> ();
 		lastDesiredFacingRotation = Quaternion.Euler (0, 45, 0);
