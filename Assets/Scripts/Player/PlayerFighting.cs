@@ -37,6 +37,7 @@ public class PlayerFighting : MonoBehaviour {
 	}
 
 	public void DonePunching() {
+		Debug.Log ("Blox is " + IsQueuedPunch);
 		if (IsQueuedPunch) {
 			animator.SetTrigger("Punch2");
 			IsQueuedPunch = false;

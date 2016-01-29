@@ -97,8 +97,8 @@ public class PlayerMover : MonoBehaviour {
 		desiredDirection.y = 0;
 		if (isMoving) {
 			this.transform.rotation = Quaternion.LookRotation (desiredDirection, Vector3.up);
-			Debug.Log("rt " + this.transform.rotation.eulerAngles);
-			Debug.Log("dd " + desiredDirection);
+			//Debug.Log("rt " + this.transform.rotation.eulerAngles);
+			//Debug.Log("dd " + desiredDirection);
 		} else {
 			desiredDirection = this.transform.forward;
 		}
